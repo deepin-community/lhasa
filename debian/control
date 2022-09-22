@@ -1,0 +1,64 @@
+Source: lhasa
+Section: utils
+Priority: optional
+Maintainer: Jonathan Dowland <jmtd@debian.org>
+Build-Depends: debhelper-compat (= 13), automake (>= 1:1.11.3),
+               autoconf (>= 2.68), libtool (>= 2.4.2), tzdata
+Standards-Version: 4.6.0
+Homepage: https://fragglet.github.io/lhasa/
+Vcs-Browser: https://salsa.debian.org/debian/lhasa
+Vcs-Git: https://salsa.debian.org/debian/lhasa.git -b debian
+
+Package: lhasa
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, liblhasa0 (= ${binary:Version})
+Conflicts: lha (<< 1.14i-10.4)
+Provides: lha, lzh-archiver
+Description: lzh archive decompressor
+ Lhasa lha is a tool for parsing LHA (.lzh) archives and a free
+ replacement for the Unix LHA tool.
+ .
+ Currently it is only possible to read from (ie. decompress) archives;
+ generating (compressing) LHA archives may be an enhancement for future
+ versions. The aim is to be compatible with as many different variants
+ of the LHA file format as possible, including LArc (.lzs) and
+ PMarc (.pma).
+ .
+ The command line tool aims to be interface-compatible with the non-free
+ Unix LHA tool (command line syntax and output), for backwards
+ compatibility with tools that expect particular output.
+
+Package: liblhasa-dev
+Section: libdevel
+Multi-Arch: same
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, liblhasa0 (= ${binary:Version})
+Description: lzh decompression library - development files
+ Lhasa is a library for parsing LHA (.lzh) archives and a free
+ replacement for the Unix LHA tool.
+ .
+ Currently it is only possible to read from (ie. decompress) archives;
+ generating (compressing) LHA archives may be an enhancement for future
+ versions. The aim is to be compatible with as many different variants
+ of the LHA file format as possible, including LArc (.lzs) and PMarc
+ (.pma).
+ .
+ This package contains the development headers and files.
+
+Package: liblhasa0
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Description: lzh archive decompression library
+ Lhasa is a library for parsing LHA (.lzh) archives and a free
+ replacement for the Unix LHA tool.
+ .
+ Currently it is only possible to read from (ie. decompress) archives;
+ generating (compressing) LHA archives may be an enhancement for future
+ versions. The aim is to be compatible with as many different variants
+ of the LHA file format as possible, including LArc (.lzs) and PMarc
+ (.pma).
+ .
+ This package contains the Lhasa shared library.

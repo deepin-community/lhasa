@@ -1,0 +1,38 @@
+#!/usr/bin/make -f
+
+export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+
+dhargs := --parallel
+
+%:
+	prefix="/usr" dh $@ $(dhargs)
+
+override_dh_auto_test:
+	dh_auto_test $(dhargs) $@ -- VERBOSE=true
+
+override_dh_auto_configure:
+	dh_auto_configure $(dhargs) -- --program-suffix=sa
+
+override_dh_auto_clean:
+	dh_auto_clean $(dhargs)
+	rm -f autotools/missing \
+		autotools/depcomp \
+		autotools/config.guess \
+		autotools/ltmain.sh \
+		autotools/compile \
+		autotools/config.sub \
+		autotools/install-sh \
+		autotools/test-driver \
+		INSTALL \
+		Makefile.in \
+		aclocal.m4 \
+		config.hin \
+		configure \
+		doc/Makefile.in \
+		lib/Makefile.in \
+		lib/public/Makefile.in \
+		pkg/Makefile.in \
+		src/Makefile.in \
+		test/Makefile.in

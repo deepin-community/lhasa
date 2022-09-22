@@ -1,0 +1,150 @@
+lhasa (0.3.1-4) unstable; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Remove trailing whitespaces
+
+  [ Jonathan Dowland ]
+  * Add a watch file.
+
+  [ Debian Janitor ]
+  * Trim trailing whitespace.
+  * Use secure URI in Homepage field.
+  * Bump debhelper from old 11 to 12.
+  * Set debhelper-compat version in Build-Depends.
+
+  [ Jonathan Dowland ]
+  * Correct Homepage: field in control file.
+  * Bump standards version.
+  * Bump debhelper-compat to 13.
+  * Install .la file in the shared library package.
+  * Adjust binary package descriptions to be unique and specific.
+  * Turn on all hardening flags.
+  * Add lintian-overrides to cover .exe in the test suite.
+  * Add an initial liblhasa0.symbols file.
+
+ -- Jonathan Dowland <jmtd@debian.org>  Tue, 28 Sep 2021 19:44:59 +0100
+
+lhasa (0.3.1-3) unstable; urgency=medium
+
+  * New Vcs-* values; migrated to salsa.debian.org
+  * Bump standards version.
+  * Bump debhelper version and drop explicit "./autogen.sh": this should
+    resolve hardening flags warnings
+  * Add Multi-Arch header for -dev package, should resolve a hinter warning
+
+ -- Jonathan Dowland <jmtd@debian.org>  Mon, 07 May 2018 23:45:00 +0100
+
+lhasa (0.3.1-2) unstable; urgency=medium
+
+  * Add tzdata to build-depends. Thanks James Cowgill. Closes: #839486.
+  * ship the .pc file in our dev package. Closes: #823671.
+  * Bump standards version (no changes required)
+
+ -- Jonathan Dowland <jmtd@debian.org>  Wed, 12 Oct 2016 23:07:29 +0100
+
+lhasa (0.3.1-1) unstable; urgency=high
+
+  * New upstream release:
+
+     * This release fixes an integer underflow vulnerability in the
+       code for doing LZH level 3 header decodes (TALOS-CAN-0095).
+       Thanks go to Marcin Noga and Regina Wilson of Cisco TALOS for
+       reporting this vulnerability.
+
+ -- Jonathan Dowland <jmtd@debian.org>  Thu, 31 Mar 2016 21:01:32 +0100
+
+lhasa (0.3.0-1) experimental; urgency=medium
+
+  * New upstream version.
+  * Install some extra docs into the binary package.
+
+ -- Jonathan Dowland <jmtd@debian.org>  Sat, 25 Apr 2015 18:57:52 +0100
+
+lhasa (0.2.0+git3fe46-1) unstable; urgency=medium
+
+  * New upstream version incorporating patches referred to below
+    (and another few from me) - tests now don't hard-code /tmp.
+  * Bump standards version (no changes needed)
+
+ -- Jonathan Dowland <jmtd@debian.org>  Tue, 21 Oct 2014 20:10:29 +0100
+
+lhasa (0.2.0+git-4) experimental; urgency=medium
+
+  * Re-enable tests during build time.
+  * Apply patches to avoid using /tmp when running test-extract.
+  * Uploading to experimental for now.
+
+ -- Jonathan Dowland <jmtd@debian.org>  Tue, 21 Oct 2014 02:03:46 +0100
+
+lhasa (0.2.0+git-3) unstable; urgency=medium
+
+  * Update Vcs-Git header in control file to reflect the branch upon
+    which the Debian packaging work takes place (not the default).
+  * Correct the vcs-* header URLs to reflect the debian infrastructure
+    changes.
+  * Disable the test suite when building, until we can properly fix
+    up the remaining test that breaks on buildds. Closes: #750382.
+
+ -- Jonathan Dowland <jmtd@debian.org>  Tue, 08 Jul 2014 21:43:08 +0100
+
+lhasa (0.2.0+git-2) unstable; urgency=medium
+
+  * Bump standards version.
+  * Clean up another autotools symlink on clean.
+  * Ensure 'make check' is run with VERBOSE, so we can get more
+    diagnostic info for #750382.
+  * Add some provides etc. since lha has been removed. Thanks
+    Bob Bib. Closes: #750377.
+
+ -- Jonathan Dowland <jmtd@debian.org>  Thu, 22 May 2014 00:21:01 +0100
+
+lhasa (0.2.0+git-1) unstable; urgency=low
+
+  * bump debhelper compat to enable hardening flags.
+  * Since we're at 9 now, make the library and dev packages multiarch
+    aware.
+  * Move to 3.0 (quilt) format.
+  * Fake '0.2.0+git' upstream version (git archive):
+    * git export, so we don't get the autoconf stuff
+    * xz compression
+    * upstream's tags are GPG signed
+
+ -- Jonathan Dowland <jmtd@debian.org>  Thu, 05 Sep 2013 13:39:52 +0100
+
+lhasa (0.2.0-2) unstable; urgency=low
+
+  * use sh to invoke autogen.sh to work around -x permission
+    being dropped for some reason.
+
+ -- Jonathan Dowland <jmtd@debian.org>  Thu, 05 Sep 2013 10:24:49 +0100
+
+lhasa (0.2.0-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Jonathan Dowland <jmtd@debian.org>  Wed, 04 Sep 2013 07:30:23 +0100
+
+lhasa (0.0.7-2) unstable; urgency=low
+
+  * Include some missing headers in the -dev package.
+
+ -- Jon Dowland <jmtd@debian.org>  Wed, 06 Jun 2012 13:59:47 +0100
+
+lhasa (0.0.7-1) unstable; urgency=low
+
+  * New upstream version.
+
+ -- Jon Dowland <jmtd@debian.org>  Sun, 03 Jun 2012 09:55:08 +0100
+
+lhasa (0.0.6-2) unstable; urgency=low
+
+  * correct liblhasa-dev to depend on liblhasa0.
+    Thanks Aaron M. Ucko. Closes: #674438.
+
+ -- Jon Dowland <jmtd@debian.org>  Thu, 24 May 2012 17:14:47 +0100
+
+lhasa (0.0.6-1) unstable; urgency=low
+
+  * Initial package. Closes: #671154.
+
+ -- Jon Dowland <jmtd@debian.org>  Tue, 22 May 2012 23:05:51 +0100
