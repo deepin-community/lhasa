@@ -2,9 +2,9 @@ Source: lhasa
 Section: utils
 Priority: optional
 Maintainer: Jonathan Dowland <jmtd@debian.org>
-Build-Depends: debhelper-compat (= 13), automake (>= 1:1.11.3),
+Build-Depends: debhelper-compat (= 12), automake (>= 1:1.11.3),
                autoconf (>= 2.68), libtool (>= 2.4.2), tzdata
-Standards-Version: 4.6.0
+Standards-Version: 4.1.4
 Homepage: https://fragglet.github.io/lhasa/
 Vcs-Browser: https://salsa.debian.org/debian/lhasa
 Vcs-Git: https://salsa.debian.org/debian/lhasa.git -b debian
@@ -42,8 +42,6 @@ Description: lzh decompression library - development files
  versions. The aim is to be compatible with as many different variants
  of the LHA file format as possible, including LArc (.lzs) and PMarc
  (.pma).
- .
- This package contains the development headers and files.
 
 Package: liblhasa0
 Section: libs
@@ -60,5 +58,3 @@ Description: lzh archive decompression library
  versions. The aim is to be compatible with as many different variants
  of the LHA file format as possible, including LArc (.lzs) and PMarc
  (.pma).
- .
- This package contains the Lhasa shared library.
