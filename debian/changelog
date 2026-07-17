@@ -1,4 +1,4 @@
-lhasa (0.3.1-4) unstable; urgency=medium
+lhasa (0.4.0-1) unstable; urgency=medium
 
   [ Ondřej Nový ]
   * d/control: Remove trailing whitespaces
@@ -14,15 +14,10 @@ lhasa (0.3.1-4) unstable; urgency=medium
 
   [ Jonathan Dowland ]
   * Correct Homepage: field in control file.
-  * Bump standards version.
-  * Bump debhelper-compat to 13.
-  * Install .la file in the shared library package.
-  * Adjust binary package descriptions to be unique and specific.
-  * Turn on all hardening flags.
-  * Add lintian-overrides to cover .exe in the test suite.
-  * Add an initial liblhasa0.symbols file.
+  * New Upstream version.
+  * Add lintian overrides for self-extracting EXEs in the test suite.
 
- -- Jonathan Dowland <jmtd@debian.org>  Tue, 28 Sep 2021 19:44:59 +0100
+ -- Jonathan Dowland <jmtd@debian.org>  Sun, 25 Jun 2023 22:01:33 +0100
 
 lhasa (0.3.1-3) unstable; urgency=medium
 
